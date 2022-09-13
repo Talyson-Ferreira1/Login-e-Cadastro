@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Login</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="container-left">
+
+            <div class="container-left-login">
+
+                <div class="img-user">
+                    <img src="./assets/img/icons-curriculo.png" alt="user image">
+                </div>
+
+                <span id="placeholder-error-login"></span>
+
+                <div class="entrada">
+                    <input id="email-login" type="email" name="email-user"  required="required">
+                    <span class="placeholder placeholder-email-login">Email</span>
+                </div>
+            
+                <div class="entrada">
+                    <input id="senha-login" type="password" name="senha-login" required="required" >
+                    <span class="placeholder">Senha</span>
+                    <div class="btn-eye-login" onclick="showSenha()"></div>
+                    
+                </div>
+
+                <div class="recupera-senha">
+                    <span>Esqueceu sua senha?<a href="#"> Redefinir senha</a></span>
+                </div>
+
+                <div class="entrar"> <a href="">Entrar</a> </div>
+
+                <div class="cadastre-se">Não possui conta? <a id="cadastro-link" href="#"> Cadastre-se grátis </a> </div>
+
+            </div>
+
+            <div class="container-left-cadastro">
+
+                <Span id="title-cadastro">Cadastre-se</Span>
+
+                <span id="placeholder-error-cadastro"></span>
+
+                <div class="entrada">
+                    <input id="nome" type="text" name="nome" required="required" >
+                    <span class="placeholder">Nome</span>
+                </div>
+                
+                <div class="entrada">
+                    <input id="email-cadastro" type="email" name="email-cadastro" required="required" >
+                    <span class="placeholder placeholder-email-cadastro ">Email</span>
+                    
+                </div>
+
+                <div class="entrada">
+                    <input id="tel-input" type="tel" name="telefone" required="required" >
+                    <span class="placeholder tel">(XX) X XXXX-XXXX</span>
+                </div>
+
+                <div class="entrada">
+                    <input id="senha-cadastro" type="password" name="senha-cadastro" required="required" onkeyup="checkPassword(this.value)">
+                    <span class="placeholder">Senha</span>
+                    <div class="btn-eye-cad"></div>
+                </div>
+
+                <div class="entrada">
+                    <input id="senha-cadastro-confirm" type="password" name="senha-cadastro-confirm" required="required" >
+                    <span class="placeholder">Confirme a senha</span>
+                    <div class="btn-eye-cad2" ></div>
+                </div>
+
+                <div class="cadastro-confirm"><a href="#" >Cadastrar</a></div>
+
+                <div class="login-link">Ja possui conta? <a href="#" >Faça login</a></div>
+                
+
+            </div>
+
+        </div>
+
+        <div class="container-right">
+            <div class="container-right-login" >
+                <img src="./assets/img/avatar.png" alt="avatar ilustração">
+            </div>
+            <div class="container-right-cadastro">
+                <img src="./assets/img/info.png" alt="avatar ilustração">
+            </div>
+        </div>
+        <div class="requisitos">
+            <span id="lower">Letra minúscula</span><br>
+            <span id="upper">Letra maiúscula</span><br>
+            <span id="charNumber">Um caractér numérico</span><br>
+            <span id="charLength">Mínimo 8 letras</span><br>
+        </div>
+    </div>
+
+    <script src="./assets/index.js"></script>
+</body>
+</html>

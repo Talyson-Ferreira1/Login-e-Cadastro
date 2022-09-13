@@ -1,0 +1,493 @@
+
+:root
+{
+/* ---------------- COLOR ------------------- */
+    --black:#000;
+    --white:#fff;
+    --primaria:rgb(87, 240, 197);
+    --secundaria:rgb(0, 226, 162);
+    --blur: rgba(255, 255, 255, 0.214);
+}
+
+/* ---------------- BASE ------------------- */
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html
+{
+    scroll-behavior: smooth;
+}
+ul
+{
+    list-style: none;
+}
+a
+{
+    text-decoration: none;
+}
+body
+{
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(./img/triangles2.jpg);
+    background-position: center;
+    background-size: cover ;
+    background-repeat: no-repeat;
+   /*  background-image:linear-gradient( 180deg,rgb(22, 22, 22),rgb(54, 53, 53), rgb(83, 83, 83),rgb(105, 105, 105)); */
+}
+.container  
+{
+    width: 700px;
+    height: 450px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    border-radius: 12px;
+    border-top: 1px solid var(--primaria);
+    border-left: 1px solid var(--primaria);
+
+}
+.requisitos
+{
+    padding: .5rem;
+    display: none;
+    background: rgba(98, 98, 98, 0.367);
+    width: 200px;
+    transition: all 1s;
+    position: absolute;
+    left:60%;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.requisitos span
+{
+    color: var(--primaria);
+    font-weight: 700;
+    font-size: .8em;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+/* ---------------- CONTAINER LEFT ------------------- */
+.container-left
+{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    background: url(./img/triangles_.jpg);
+    background-size: cover;
+    background-position: center;  
+}
+.container-left-login
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: 100%;
+    top: 0;
+    position: absolute;
+    transition: .6s ease-in-out;
+    background: transparent;
+    backdrop-filter:blur(6px);
+
+}
+.img-user
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:100px;
+
+}
+.img-user img
+{
+    height:60px;
+    width: 60px;
+}
+.entrada
+{
+    margin-top: 20px;
+    width: 80%;
+    height: 30px;
+    position: relative;
+    border-radius: 10px;
+}
+#email-login,
+#senha-login,
+#nome,
+#email-cadastro, 
+#tel-input,
+#senha-cadastro,
+#senha-cadastro-confirm
+{
+    cursor: pointer;
+    color: var(--white);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent;
+    outline: none;
+    z-index: 2;
+    padding: 10px;
+    border: 1px solid var(--primaria) ;
+}
+#email-login:hover,
+#senha-login:hover
+#nome:hover,
+#email-cadastro:hover, 
+#tel-input:hover,
+#senha-cadastro:hover,
+#senha-cadastro-confirm:hover
+{
+    border: 1px solid var(--secundaria);
+}
+#email-login:hover ~ .placeholder,
+#senha-login:hover ~ .placeholder,
+#nome:hover ~ .placeholder,
+#email-cadastro:hover ~ .placeholder, 
+#tel-input:hover ~ .placeholder,
+#senha-cadastro:hover ~ .placeholder,
+#senha-cadastro-confirm:hover ~ .placeholder
+{
+    color: var(--secundaria);
+}
+.placeholder
+{
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    font-size: .8em;
+    font-weight: 600;
+    color: var(--white)
+}
+.placeholder.active
+{
+    transform: translateY(-20px);
+    transition: all .5s;
+    background: var(--secundaria);
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-size: .6em;
+    z-index: 2;
+    color: var(--black);
+}
+#email-login:valid ~ .placeholder,
+#email-login:focus ~ .placeholder,
+#senha-login:valid ~ .placeholder,
+#senha-login:focus ~ .placeholder,
+#nome:valid ~ .placeholder,
+#nome:focus ~ .placeholder,
+#email-cadastro:valid ~ .placeholder,
+#email-cadastro:focus ~ .placeholder,
+#tel-input:valid ~ .placeholder,
+#tel-input:focus ~ .placeholder,
+#senha-cadastro:valid ~ .placeholder,
+#senha-cadastro:focus ~ .placeholder,
+#senha-cadastro-confirm:valid ~ .placeholder,
+#senha-cadastro-confirm:focus ~ .placeholder
+{
+
+    transition: all .5s;
+    background: var(--secundaria);
+    padding: 1px 5px;
+    border-radius: 2px;
+    transform: translateY(-20px);
+    font-size: .6em;
+    z-index: 2;
+    color: var(--black);
+}
+.recupera-senha
+{
+    width: 80%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.recupera-senha span
+{
+    font-weight: 700;
+    font-size: .6em;
+    color: var(--white);
+}
+.recupera-senha span a
+{
+    color: var(--primaria);
+}
+.recupera-senha span a:hover
+{
+    color: var(--secundaria);
+}
+.entrar,
+.cadastro-confirm
+{
+    margin: 1rem 0;
+    width: 80%;
+    height: 30px;
+    background: var(--primaria);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+
+}
+.entrar a,
+.cadastro-confirm a
+{
+    color: var(--black);
+}
+.entrar:hover,
+.cadastro-confirm:hover
+{
+    transform: scale(1.02);
+    background: var(--secundaria);
+}
+.cadastre-se
+{
+    width: 80%s;
+    height: 30px;
+    font-size: .6em;
+    font-weight: 700;
+    color: var(--white);
+    position: absolute;
+    bottom: 10px;
+}
+.login-link
+{
+    width: 80%s;
+    height: 30px;
+    font-size: .6em;
+    font-weight: 700;
+    color: var(--white);
+    position: absolute;
+    bottom: 0;
+}
+.cadastre-se a,
+.login-link a
+{
+    color: var(--primaria);
+    font-weight: 700;
+}
+.cadastre-se a:hover,
+.login-link a:hover
+{
+    color: var(--secundaria);
+
+}
+#placeholder-error-login
+{
+    position: absolute;
+    top: 90px;
+    display: none;
+    background: var(--blur);
+    font-size: .7em;
+    font-weight: 700;
+    padding: .2rem 5rem;
+    color: red;
+}
+#placeholder-error-cadastro
+{
+    position: absolute;
+    top: 60px;
+    display: none;
+    background: var(--blur);
+    font-size: .7em;
+    font-weight: 700;
+    padding: .2rem 5rem;
+    color: red;
+}
+/* ---------------- CONTAINER LEFT CADASTRO ------------------- */
+.container-left-cadastro
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    top: -100%;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    transition: .6s ease-in-out;
+    background: transparent;
+    backdrop-filter:blur(6px);
+}
+#title-cadastro
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    margin-top: 1rem;
+    width: 80%;
+    height: 50px;
+    font-size: 2em;
+    font-weight: 700;
+}
+/* ---------------- CONTAINER RIGHT ------------------- */
+.container-right
+{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.container-right-login
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    background:var(--blur);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    transition: .6s ease-in-out;
+}
+.container-right-cadastro img,
+.container-right-login img
+{
+    animation: up 10s ease-in-out infinite;
+    transition: all 1s;
+}
+.container-right-cadastro
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    position: relative;
+    top: 100%;
+    background: var(--blur);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    transition: .6s ease-in-out;
+}
+@keyframes up
+{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+#lower::before,
+#upper::before,
+#charNumber::before,
+#charLength::before
+{
+    margin-right: .5rem;
+    content: '\f057';
+    font-family: fontAwesome;
+    color: red;
+}
+#lower.valid::before,
+#upper.valid::before,
+#charNumber.valid::before,
+#charLength.valid::before
+{
+    margin-right: .5rem;
+    content: '\f00c';
+    font-family: fontAwesome;
+    color: rgb(50, 244, 50);
+}
+.btn-eye-login::after,
+.btn-eye-cad::after,
+.btn-eye-cad2::after
+{
+    z-index: 4;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 20px;
+    margin-right: .5rem;
+    content: '\f06e';
+    font-family: fontAwesome;
+    color: var(--black);
+    background: var(--primaria);
+}
+.btn-eye-login.hide::after,
+.btn-eye-cad.hide::after,
+.btn-eye-cad2.hide::after
+{
+    content: '\f070';
+}
+@media (max-width:700px){
+
+    .container   
+    {
+        width: 90%;
+        height: 90%;
+    }
+    .container-left
+    {
+        width: 100%;
+    }
+    .container-right
+    {
+        display: none;
+    }
+    .requisitos
+    {
+        
+        position: absolute;
+        top: 70% ;
+        left: 50%;
+        height: 110px;
+        width: 150px;
+        padding: .2rem;
+        display: flex;
+        justify-content: center;
+        transform: translateX(-50%);
+    }
+    .requisitos span
+    {
+        font-size: .7em;
+        
+    }
+}
+@media (max-width:320px)
+{
+    .container   
+    {
+        min-height: 400px;
+        min-width: 300px;
+    }
+    .requisitos
+    {
+        top: 72% ;
+    }
+}
