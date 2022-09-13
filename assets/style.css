@@ -469,7 +469,6 @@ body
         height: 110px;
         width: 150px;
         padding: .2rem;
-        display: flex;
         justify-content: center;
         transform: translateX(-50%);
     }
